@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import dateFormat from "dateformat";
+
 import axios from 'axios';
 
 
@@ -20,6 +22,8 @@ const Service = () => {
 
 	}, []);
 
+
+
 	return(
 		<>
 		<table className='table table-bordered'>
@@ -33,10 +37,13 @@ const Service = () => {
 			<tbody>
 				{services.map((service, index) => {
 					return (
-						<tr>
+						<tr key={service.id}>
 							<td>{service.id}</td>
-							<td>{service.name}</td>
-							<td>{service.createdAt}</td>
+							<td>{service.service_name}</td>
+                            {
+                                console.log(dateFormat(service.createdAt,  "mmmm dS, yyyy"))
+                            }
+							<td>{dateFormat(service.createdAt,  "mmmm dS, yyyy")}</td>
 						</tr>
 					)
 				})}

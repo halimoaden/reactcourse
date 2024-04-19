@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import dateFormat from "dateformat";
+
 import axios from 'axios';
 
 
@@ -44,7 +46,7 @@ const Patient = () => {
 							<td>{patient.email}</td>
 							<td>{patient.village.district.district_name}</td>
 							<td>{patient.village.village_name}</td>
-							<td>{patient.createdAt}</td>
+							<td>{dateFormat(patient.createdAt,  "dddd, mmmm dS, yyyy")}</td>
 						</tr>
 					)
 				})}

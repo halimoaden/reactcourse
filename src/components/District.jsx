@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react';
+import dateFormat from "dateformat";
+
+
 import axios from 'axios';
 
 
@@ -35,7 +38,7 @@ const District = () => {
 						<tr key={district.id}>
 							<td>{district.id}</td>
 							<td>{district.district_name}</td>
-							<td>{district.createdAt}</td>
+							<td>{dateFormat(district.createdAt,  "dddd, mmmm dS, yyyy")}</td>
 						</tr>
 					)
 				})}

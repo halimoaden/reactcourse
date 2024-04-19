@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import dateFormat from "dateformat";
+
 import axios from 'axios';
 
 
@@ -34,11 +36,11 @@ const Village = () => {
 			<tbody>
 				{villages.map((village, index) => {
 					return (
-						<tr>
+						<tr key={village.id}>
 							<td>{village.id}</td>
 							<td>{village.district.district_name}</td>
 							<td>{village.village_name}</td>
-							<td>{village.createdAt}</td>
+							<td>{dateFormat(village.createdAt,  "dddd, mmmm dS, yyyy")}</td>
 						</tr>
 					)
 				})}
