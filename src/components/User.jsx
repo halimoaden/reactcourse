@@ -9,11 +9,18 @@ const User = () => {
 
 	const fetchUsers = () => {
 
-		axios.get(URL + 'users')
+		axios.get(`${URL}users`)
+		// axios.get(URL + 'users',{
+		// 	headers: {
+		// 		'x-auth-token': localStorage.getItem('x-auth-token')
+		// 	}
+		// })
 		.then(res => setUsers(res.data))
-		.catch(err => console.log(err))
+		.catch(err => console.log(err.response.data))
 	}
 
+	console.log(users)
+	
 	useEffect(() => {
 		fetchUsers()
 	}, []);
@@ -30,6 +37,7 @@ const User = () => {
 				</tr>
 				</thead>
 				<tbody>
+					
 			{users.map((user, index) => {
 				return (
 					<tr key={user.id}>

@@ -20,12 +20,12 @@ const Login = () => {
 		axios.post(URL + 'login', {
 			email: username,
 			password: password
-		}, {
-			headers: {
-				'x-auth-token': localStorage.setItem('x-auth-token', token)
-			}
 		})
-		.then(response => console.log(setToken(response.data)))
+		.then((response) => {
+			// setToken(response.data)
+			// console.log(response.data)
+			localStorage.setItem('x-auth-token', response.data)
+		})
 		.catch(err => console.log(err));
 	}
 
@@ -33,12 +33,12 @@ const Login = () => {
 		 <Form>
 	      <Form.Group className="mb-3" controlId="formBasicEmail">
 	        <Form.Label>Email address</Form.Label>
-	        <Form.Control value={username} onChange={username => setUsername(username.target.value)} type="email" placeholder="Enter email" />
+	        <Form.Control value={username} onChange={e => setUsername(e.target.value)} type="email" placeholder="Enter email" />
 	      </Form.Group>
 
 	      <Form.Group className="mb-3" controlId="formBasicPassword">
 	        <Form.Label>Password</Form.Label>
-	        <Form.Control value={password} onChange={password => setPassword(password.target.value)} type="password" placeholder="Password" />
+	        <Form.Control value={password} onChange={e => setPassword(e.target.value)} type="password" placeholder="Password" />
 	      </Form.Group>
 	      
 	      <Button onClick={makeLogin} variant="primary" type="submit">
