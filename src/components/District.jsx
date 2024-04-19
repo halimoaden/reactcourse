@@ -19,7 +19,6 @@ const District = () => {
 
 	useEffect(() => {
 		fetchDistricts()
-
 	}, []);
 
 	return(

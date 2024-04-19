@@ -31,19 +31,17 @@ const User = () => {
 				</thead>
 				<tbody>
 			{users.map((user, index) => {
-			return (
-				
-				<tr>
-					<td> {user.id} </td>
-					<td> {user.user_name} </td>
-					<td> {user.email} </td>
-					<td> {(user.is_admin) ? "Yes" : "Nop"} </td>
-				</tr>
-				
-			)
-		})}
-		</tbody>
-				</table>
+				return (
+					<tr key={user.id}>
+						<td> {user.id} </td>
+						<td> {user.user_name} </td>
+						<td> {user.email} </td>
+						<td> {(user.is_admin) ? "Yes" : "Nop"} </td>
+					</tr>
+				)
+			})}
+			</tbody>
+		</table>
 		</>
 	);
 }
