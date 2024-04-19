@@ -40,10 +40,7 @@ const Service = () => {
 						<tr key={service.id}>
 							<td>{service.id}</td>
 							<td>{service.service_name}</td>
-                            {
-                                console.log(dateFormat(service.createdAt,  "mmmm dS, yyyy"))
-                            }
-							<td>{dateFormat(service.createdAt,  "mmmm dS, yyyy")}</td>
+							<td>{dateFormat(service.createdAt,  "dddd, mmmm dS, yyyy")}</td>
 						</tr>
 					)
 				})}

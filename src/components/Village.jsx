@@ -11,7 +11,6 @@ const Village = () => {
 	const URL = "https://eyes-hospital.cleverapps.io/api/";
 
 	const fetchVillages = () => {
-
 		axios.get(URL + 'villages')
 		.then(res => setVillages(res.data))
 		.catch(err => console.log(err))

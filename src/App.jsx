@@ -5,12 +5,13 @@ import Login from './components/Login';
 import Home from './components/Home';
 import Village from './components/Village';
 import Service from './components/Service';
+import Payment from './components/Payment';
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/Navigation';
-
 
 
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/districts" element={<District />}> </Route>
           <Route path="/villages" element={<Village />}> </Route>
           <Route path="/services" element={<Service />}> </Route>
+          <Route path="/payments" element={<Payment />}> </Route>
           <Route path="/" element={<Home />}> </Route>
         </Routes>
         </div>
