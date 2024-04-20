@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
+import { redirect } from "react-router-dom";
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+
 import axios from 'axios';
 
 
@@ -25,6 +28,7 @@ const Login = () => {
 			// setToken(response.data)
 			// console.log(response.data)
 			localStorage.setItem('x-auth-token', response.data)
+			return redirect("/");
 		})
 		.catch(err => console.log(err));
 	}
